@@ -67,3 +67,87 @@ body {
 .twitter { background: #1da1f2; }
 .instagram { background: #e4405f; }
 .google { background: #db4437; }
+/* Style général des boutons */
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: white;
+    font-weight: bold;
+    margin: 5px;
+}
+
+/* Couleurs spécifiques */
+.buttons button:nth-child(1) { background-color: #1d0af1; } /* Tous - Gris foncé */
+.buttons button:nth-child(2) { background-color: #16a4e0; } /* Action - Rouge */
+.buttons button:nth-child(3) { background-color: #ef0e0e; } /* Drame - Bleu clair */
+.buttons button:nth-child(4) { background-color: #f5a835f9; } /* Police - Vert */
+
+/* Effet au survol */
+.buttons button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+/* Style du bouton "Plus de films" */
+#toggleBtn {
+    background-color: #040505; 
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+/* Effet au survol */
+#toggleBtn:hover {
+    background-color: #090a0a; 
+    transform: scale(1.05);
+}
+.movies-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.movies-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 100px;
+    padding: 10px;
+    max-width: 800px;
+    white-space: nowrap;
+}
+
+.movie {
+    text-align: center;
+    flex: 0 0 auto;
+    display: inline-block;
+}
+
+.movie img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+}

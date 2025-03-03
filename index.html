@@ -6,7 +6,8 @@
     <title>Film Store</title>
     <!-- Lien vers Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Lien vers ton fichier CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Lien vers mon fichier CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -301,9 +302,80 @@
             </div>
         </section>
 
-        <!-- Section Featured Movies -->
+        <!-- Partie 4: Section Featured Movies -->
         <section>
             <!-- Contenu de la section featured movies -->
+            <h2  style="font-family: 'Algerian', sans-serif; font-size: 50px; color: white; text-shadow: 3px 3px 5px rgb(255, 245, 245); padding: 20px 20px; border-radius: 10px; display: inline-block;">
+                <span style="color: rgb(68, 0, 255);">Featured</span> <span style="color: rgb(2, 2, 2);">Movies</span>
+            </h2>
+            <!-- BOUTONS DE FILTRAGE -->
+            <div class="buttons">
+                <button onclick="filterMovies('all')">Tous</button>
+                <button onclick="filterMovies('action')">Action</button>
+                <button onclick="filterMovies('drama')">Drame</button>
+                <button onclick="filterMovies('police')">Police</button>
+            </div>
+    
+            <!-- CONTENEUR DES FILMS -->
+            <div class="movies-wrapper">
+                <div class="movies-container" id="movies">
+                    <!-- FILMS INITIAUX -->
+                    <div class="movie action show">
+                        <img src="https://www.cinema.com/image_lib/15865_poster14.jpg" alt="Top Gun">
+                        <p class="title">Top Gun</p>
+                        <p class="details">1986 - Action</p>
+                    </div>
+                    <div class="movie action show">
+                        <img src="https://storage.googleapis.com/finansialku_media/wordpress_media/2022/11/5bd1c4bd-black-adam.-sumber-imdb-1.jpg" alt="Black Adam">
+                        <p class="title">Black Adam</p>
+                        <p class="details">2022 - Action</p>
+                    </div>
+                    <div class="movie drama show">
+                        <img src="https://media.senscritique.com/media/000019908728/source_big/Crise.jpg" alt="Crise">
+                        <p class="title">Crise</p>
+                        <p class="details">2019 - Drame</p>
+                    </div>
+                    <div class="movie drama show">
+                        <img src="https://fr.web.img3.acsta.net/pictures/16/03/14/17/37/177182.jpg" alt="Une seconde chance">
+                        <p class="title">Une seconde chance</p>
+                        <p class="details">2016 - Drame</p>
+                    </div>
+                    <div class="movie police show">
+                        <img src="https://www.cinetrafic.fr/images/affiches/original/aff_1587020190610160005.jpg" alt="Becky Lynch">
+                        <p class="title">Becky Lynch</p>
+                        <p class="details">2021 - Police</p>
+                    </div>
+                    <div class="movie police show">
+                        <img src="https://web.static-rmg.be/if/c_crop,w_1200,h_1600,x_0,y_0,g_center/c_fit,w_620,h_826/d4710603998e53fbcefa37761085dd6e.jpg" alt="Police">
+                        <p class="title">Police</p>
+                        <p class="details">2020 - Police</p>
+                    </div>
+                </div>
+    
+                <!-- BOUTON POUR PLUS/MOINS DE FILMS -->
+                <div class="button-container">
+                    <button id="toggleBtn" onclick="toggleMovies()">Plus de films</button>
+                </div>
+    
+                <!-- FILMS SUPPLÉMENTAIRES -->
+                <div id="extraMovies" class="movies-container hidden">
+                    <div class="movie action">
+                        <img src="https://www.map24.com/wp-content/uploads/2022/06/Le-Secret-de-la-Cite-Perdue-1536x1023.jpg" alt="Le Secret de la Cité Perdue">
+                        <p class="title">Le Secret de la Cité Perdue</p>
+                        <p class="details">2022 - Action</p>
+                    </div>
+                    <div class="movie drama">
+                        <img src="https://th.bing.com/th/id/R.28a589252839c8914e22045b31dd32e7?rik=K4H5OGdz6HTUdg&riu=http%3a%2f%2ffr.web.img4.acsta.net%2fpictures%2f14%2f04%2f29%2f16%2f38%2f175465.jpg&ehk=eqBRBnDtQRmQC6FNEqGC%2bRkonbHMUl7XbkGK122QJLA%3d&risl=&pid=ImgRaw&r=0" alt="Un amour sans fin">
+                        <p class="title">Un amour sans fin</p>
+                        <p class="details">2014 - Drame</p>
+                    </div>
+                    <div class="movie police">
+                        <img src="https://th.bing.com/th/id/R.8b12a747432e79ecfb5e6abec19d3b07?rik=ELRtMABOcfhVYA&riu=http%3a%2f%2fwww.impawards.com%2fintl%2ffrance%2ftv%2fposters%2fbraqueurs_xlg.jpg&ehk=PTbDZahGAuFgye9ZO4OFK5rz84kBjNrY8qBTqhkujLo%3d&risl=&pid=ImgRaw&r=0" alt="Braqueurs">
+                        <p class="title">Braqueurs</p>
+                        <p class="details">2015 - Police</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Section Shop Movie -->
