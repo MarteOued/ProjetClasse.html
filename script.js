@@ -55,3 +55,27 @@
                 toggleBtn.textContent = "Plus de films";
             }
         }
+        function showPopup() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("⚠️ Oups ! Tous les champs doivent être remplis avant d'envoyer votre message.");
+                return;
+            }
+
+            document.getElementById("popupName").textContent = name;
+            document.getElementById("popupEmail").textContent = email;
+            document.getElementById("popupMessage").textContent = message;
+
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("popupOverlay").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("popupOverlay").style.display = "none";
+        }
+
+    
