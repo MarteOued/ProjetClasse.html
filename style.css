@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+#cookieBox {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px;
+    border: 10px solid rgb(100, 95, 95);
+    z-index: 1000;
+}
+#content {
+    display: none; 
+    
+}.login-register-container .btn {
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+}
