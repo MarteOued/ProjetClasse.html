@@ -77,5 +77,48 @@
             document.getElementById("popup").style.display = "none";
             document.getElementById("popupOverlay").style.display = "none";
         }
+        // Partie 7: Footer 
+        document.addEventListener("DOMContentLoaded", function () {
+            // Création du bouton
+            let scrollTopBtn = document.createElement("button");
+            let arrowIcon = document.createElement("span");
+    
+            // Ajout du texte et icône (flèche vers le haut)
+            arrowIcon.innerHTML = "⬆️";
+            scrollTopBtn.appendChild(arrowIcon);
+    
+            // Ajout des classes et styles
+            scrollTopBtn.id = "scrollTopBtn";
+            scrollTopBtn.style.position = "fixed";
+            scrollTopBtn.style.bottom = "20px";
+            scrollTopBtn.style.right = "20px";
+            scrollTopBtn.style.width = "50px";
+            scrollTopBtn.style.height = "50px";
+            scrollTopBtn.style.background = "#ff4d4d";
+            scrollTopBtn.style.color = "white";
+            scrollTopBtn.style.border = "none";
+            scrollTopBtn.style.borderRadius = "50%";
+            scrollTopBtn.style.cursor = "pointer";
+            scrollTopBtn.style.display = "none";
+            scrollTopBtn.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.2)";
+            scrollTopBtn.style.transition = "opacity 0.3s ease-in-out";
+    
+            // Ajout du bouton au DOM
+            document.body.appendChild(scrollTopBtn);
+    
+            // Fonction pour gérer l'affichage du bouton
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 200) {
+                    scrollTopBtn.style.display = "block";
+                } else {
+                    scrollTopBtn.style.display = "none";
+                }
+            });
+    
+            // Fonction pour remonter en haut avec une animation fluide
+            scrollTopBtn.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
 
     
