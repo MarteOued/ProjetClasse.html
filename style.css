@@ -105,10 +105,7 @@ body {
 }
 
 /* Effet au survol */
-#toggleBtn:hover {
-    background-color: #090a0a; 
-    transform: scale(1.05);
-}
+
 .movies-wrapper {
     display: flex;
     flex-direction: column;
@@ -178,6 +175,14 @@ body {
     flex: 1;
     max-width: 800px;
     margin-top: 180px;
+}
+#toggleBtn {
+    margin: 20px;
+    padding: 10px 15px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .film-video {

@@ -1,9 +1,9 @@
 // Partie 1 : Entrée pour la verification de l'âge
    // JAVASCRIPT
     
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() { //trim() enlève les espaces avant et après la saisie
             let age = prompt("Veuillez entrer votre âge :");
-            if (age === null || age.trim() === "" || isNaN(age) || age < 18) {
+            if (age === null || age.trim() === "" || isNaN(age) || age < 18) { // isNaN() vérifie si age n'est pas un nombre
                 window.location.href = "https://www.imdb.com";
             } else {
                 document.getElementById("cookieBox").style.display = "block";
@@ -22,9 +22,9 @@
             window.location.href = "https://www.imdb.com";
         }
     
-        function filterMovies(genre) {
-            let allMovies = document.querySelectorAll('.movie');
-            let extraMovies = document.getElementById('extraMovies');
+        function filterMovies(genre) { // querySelectorAll() permet de sélectionner plusieurs éléments d'un coup.C'est utile pour appliquer des styles ou modifier plusieurs éléments à la fois.
+            let allMovies = document.querySelectorAll('.movie'); // allMovies permet de filtrer les films selon leur genre.
+            let extraMovies = document.getElementById('extraMovies'); //  permet de montrer ou cacher des films supplémentaires.
 
             allMovies.forEach(movie => {
                 if (genre === 'all') {
@@ -45,16 +45,22 @@
 
         function toggleMovies() {
             let extraMovies = document.getElementById('extraMovies');
+            let moviesContainer = document.getElementById('movies');
             let toggleBtn = document.getElementById('toggleBtn');
-
+        
             if (extraMovies.classList.contains('hidden')) {
                 extraMovies.classList.remove('hidden');
+        
+                // Insérer les films supplémentaires AVANT les films existants
+                moviesContainer.insertBefore(extraMovies, moviesContainer.firstChild);
+        
                 toggleBtn.textContent = "Moins de films";
             } else {
                 extraMovies.classList.add('hidden');
                 toggleBtn.textContent = "Plus de films";
             }
         }
+        
         function showPopup() {
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
